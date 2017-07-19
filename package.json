@@ -1,0 +1,20 @@
+{
+  "name": "rapid-prototyper",
+  "version": "0.0.1",
+  "description": "Boilerplate stuff for serving a simple app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Flesh this out later. Don't be lazy'",
+    "start": "nodemon ./index.js",
+    "prestart": "npm install",
+    "launch": "chrome http://127.0.0.1:3000/"
+  },
+  "author": "Christian Danielsen",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "1.11.0"
+  },
+  "dependencies": {
+    "express": "4.15.3"
+  }
+}
