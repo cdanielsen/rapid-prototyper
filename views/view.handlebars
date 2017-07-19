@@ -1,0 +1,9 @@
+<div>
+  {{#each messages}}
+  <li>{{this}}</li>
+  {{/each}}
+</div>
+<script>
+  // Auto-refresh page every five secs
+  setTimeout(() => window.location.reload(true), 5000);
+</script>
