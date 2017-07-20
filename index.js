@@ -24,8 +24,8 @@ app.get('/', async (request, response) => {
   console.log(twilioMessages);
   const messageBodies = twilioMessages.filter(fullMessage => fullMessage.direction === 'inbound')
   .map(fullMessage => {    
-    var fromName = fullMessage.from;
-    var dumpling = blueDumplings.filter(b => b.number === fullMessage.from);
+    let fromName = fullMessage.from;
+    const dumpling = blueDumplings.filter(b => b.number === fullMessage.from);
     if(dumpling.length > 0)
       fromName = dumpling[0].name;
 
