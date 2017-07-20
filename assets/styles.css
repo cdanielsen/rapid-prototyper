@@ -1,0 +1,22 @@
+
+body {
+  text-align: center;
+  font-family: 'Zilla Slab', serif;
+  font-size: 35px;
+  al
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-bottom: 10;
+}
+
+div#main-content {
+  width: 50%;
+  margin: 0 auto;
+}
+
+div#phone-number {
+  font-size: 100px;
+}
