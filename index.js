@@ -1,24 +1,28 @@
-const express = require('express');
-const exphbs = require('express-handlebars');
-const twilio = require('twilio');
+const express = require('express')
+const exphbs = require('express-handlebars')
+const Twilio = require('twilio')
+require('dotenv').config()
 
-const app = express();
-const port = 3000;
+const app = express()
+const port = 3000
 
-const ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
-const AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
-const client = new twilio(ACCOUNT_SID, AUTH_TOKEN);
+const ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID
+const AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN
+const client = new Twilio(ACCOUNT_SID, AUTH_TOKEN)
 
 // App config
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+app.engine('handlebars', exphbs({defaultLayout: 'main'}))
+app.set('view engine', 'handlebars')
+
+// Serve static files from ./assets
+app.use(express.static('assets'))
 
 // Top level route
-app.get('/', async (request, response, next) => {
-  client.messages.list().then(listOfMessages => {
-    const messages = listOfMessages.map(message => message.body);
-    response.render( 'view', {messages: messages} );
-  });
+app.get('/', async (request, response) => {
+  const twilioMessages = await client.messages.list()
+  console.log(twilioMessages);
+  const messageBodies = twilioMessages.map(fullMessage => fullMessage.body)
+  response.render('view', {messages: messageBodies})
 })
 
 // Server listener
@@ -27,4 +31,4 @@ app.listen(port, (err) => {
     return console.log('Something bad happened', err)
   }
   console.log(`server is listening on ${port}`)
-});
+})
