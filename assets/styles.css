@@ -1,0 +1,30 @@
+
+body {
+  text-align: center;
+  font-family: 'Zilla Slab', serif;
+  font-size: 35px;
+ background-color: #8A2BE2;
+ padding: 0px;
+ margin: 0px;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-bottom: 10;
+}
+
+main{
+  width: 50%;
+  margin: 0 auto;
+}
+header#phone-number {
+  font-size: 100px;
+  background-color: 	#E6E6FA;
+  padding: 20px 0;
+}
+header#phone-number span {
+  max-width: 1000px;
+
+}
