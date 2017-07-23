@@ -9,6 +9,3 @@
 #### Go ####
 - Run `npm start` from your shell to start the server
 - In a new shell window, run `npm run launch` to launch the site
-
-#### TODO ####
-- Serve static assets (css?)

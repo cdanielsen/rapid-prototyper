@@ -1,14 +1,9 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
-const Twilio = require('twilio')
 require('dotenv').config()
 
 const app = express()
 const port = 3000
-
-const ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID
-const AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN
-const client = new Twilio(ACCOUNT_SID, AUTH_TOKEN)
 
 // App config
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
@@ -19,10 +14,7 @@ app.use(express.static('assets'))
 
 // Top level route
 app.get('/', async (request, response) => {
-  const twilioMessages = await client.messages.list()
-  console.log(twilioMessages);
-  const messageBodies = twilioMessages.map(fullMessage => fullMessage.body)
-  response.render('view', {messages: messageBodies})
+  response.render('view', {message: 'Hello World!'})
 })
 
 // Server listener

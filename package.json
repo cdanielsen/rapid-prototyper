@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo 'Flesh this out later. Don't be lazy'",
-    "start": "nodemon ./index.js",
-    "prestart": "npm install",
+    "start": "npm i && node ./index.js",
+    "start:dev": "npm i && nodemon ./index.js",
     "launch": "chrome http://127.0.0.1:3000/"
   },
   "author": "Christian Danielsen",
   "license": "ISC",
+  "repository": "https://github.com/cdanielsen/rapid-prototyper",
   "devDependencies": {
     "eslint": "^4.2.0",
     "eslint-config-standard": "10.2.1",
@@ -23,7 +24,6 @@
   "dependencies": {
     "dotenv": "4.0.0",
     "express": "4.15.3",
-    "express-handlebars": "3.0.0",
-    "twilio": "3.5.0"
+    "express-handlebars": "3.0.0"
   }
 }
