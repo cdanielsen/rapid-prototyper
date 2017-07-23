@@ -1,6 +1,6 @@
 {
   "name": "rapid-prototyper",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Boilerplate stuff for serving a simple app",
   "main": "index.js",
   "scripts": {
